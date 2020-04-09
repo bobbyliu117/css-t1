@@ -1,5 +1,10 @@
+**Fontawesome**
+```html
+<script src="https://kit.fontawesome.com/59c082e949.js" crossorigin="anonymous"></script>
+```
 
 **remove li style**
+
 `ul { list-style: none; }`
 
 **background**
@@ -18,6 +23,7 @@ a {
 ```
 
 **Lorem shortcut**
+
 `lorem15 enter` in vs code
 
  **背景图片Overlay**
