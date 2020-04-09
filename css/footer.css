@@ -1,0 +1,12 @@
+
+
+footer {
+  text-align: center;
+  background: var(--c-blk);
+  color: white;
+  padding: 1rem;
+}
+footer span {
+  color: white;
+  font-family: 'audiowide';
+}

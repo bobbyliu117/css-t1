@@ -1,0 +1,31 @@
+#features {
+  overflow: hidden;
+  text-align: center;
+  height: 260px;
+}
+
+#features .box {
+  float: left;
+  width: 33.3%;
+  padding: 2.5rem;
+  height: 100%;
+}
+
+#features .box i {
+  margin-bottom: 1rem;
+}
+
+#features .box p {
+  margin: 0.5rem;
+}
+
+#features .box p a {
+  color: var(--c-prime);
+  font-weight: bolder;
+  font-family: fantasy, Helvetica, sans-serif;
+}
+
+.reverse-bg {
+  color: var(--c-second);
+  background-color: var(--c-blk);
+}
