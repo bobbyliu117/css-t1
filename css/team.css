@@ -1,0 +1,77 @@
+#about-us {
+  overflow: hidden;
+}
+
+#about-us .left {
+  float: left;
+  width: 60%;
+  padding: 3rem;
+  color: var(--c-blk);
+}
+
+#about-us .left h1 {
+  line-height: 3rem;
+  font-family: fantasy;
+  color: var(--c-second);
+}
+
+#about-us .left p {
+  line-height: 1.5rem;
+  margin-top: 1rem;
+}
+
+#about-us img {
+  display: block;
+  float: right;
+  width: 40%;
+  padding: 3rem;
+  border-radius: 50%;
+}
+
+#team {
+  position: relative;
+  background: url('../images/team1.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+#team .container {
+  position: relative;
+  z-index: 1;
+}
+
+#team .container h1 {
+  font-family: 'Audiowide', Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  line-height: 4rem;
+}
+
+#team .container .member {
+  width: 80%;
+  margin: 1rem auto;
+  background-color: var(--c-overlay);
+  padding: 1rem;
+  overflow: hidden;
+  text-align: start;
+  border-radius: 4px;
+}
+
+#team .container .member img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin: 1rem;
+}
+
+#team .container .member h2 {
+  font-size: 1.2rem;
+  line-height: 3rem;
+}
+
+#team .container .member h2 span {
+  font-family: 'Audiowide', Arial, Helvetica, sans-serif;
+  margin-left: 0.2rem;
+  color: var(--c-prime);
+}

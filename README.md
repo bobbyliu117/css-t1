@@ -34,11 +34,15 @@ a {
 
  **背景图片Overlay**
  `z-index` [won't work](https://stackoverflow.com/a/9191845) in position static (default)
+
+ `z-index` not needed if overlay is background (1st element, 1st render -> bg)
  ```js
  #showcase { position: relative; }
  #showcase .overlay {
   background: #12121299;
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
