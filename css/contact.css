@@ -31,7 +31,7 @@
 }
 
 #contact-form form textarea {
-  min-height: 5rem;
+  min-height: 10rem;
 }
 
 #contact-form form .submit {
@@ -48,7 +48,7 @@
 }
 #contact-info {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -63,4 +63,10 @@
 
 #contact-info .container i {
   margin: 1rem 0;
+}
+
+@media (max-width:500px) {
+  #contact-info {
+    flex-direction: column;
+  }
 }

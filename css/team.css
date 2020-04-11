@@ -76,3 +76,17 @@
   margin-left: 0.2rem;
   color: var(--c-prime);
 }
+
+@media (max-width:500px) {
+  #about-us .left {
+    float: none;
+    width: 100%;
+    padding: 1rem;
+  }
+  #about-us img {
+    float: none;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}

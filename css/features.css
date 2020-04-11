@@ -29,3 +29,16 @@
   color: var(--c-second);
   background-color: var(--c-blk);
 }
+
+@media (max-width:500px) {
+  #features {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+  }
+  #features .box {
+    float: none;
+    width: 100%;
+    
+  }
+}

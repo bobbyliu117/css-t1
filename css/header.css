@@ -26,6 +26,25 @@ header .logo {
   text-align: center;
 }
 
+@media (max-width:500px) {
+  header .logo {
+    float: none;
+    text-align: center;
+  }
+  #navbar .container {
+    padding: 0;
+  }
+  #navbar ul {
+    float: none;
+    display: flex;
+    flex-direction: row;
+  }
+  #navbar li {
+    flex: 1;
+  }
+
+}
+
 #navbar li a {
   font-weight: bolder;
   display: block;

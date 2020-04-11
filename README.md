@@ -83,3 +83,7 @@ focus时的border，`input`, `textarea`, `button` 等
 **html特殊字符**
 
 © `&copy;`
+
+**media query**
+1. `<link rel="stylesheet" media="screen and (max-width: 768px)" href="mobile.css">`
+2. `@media(min-width:501px) and (max-width:500px) {}`

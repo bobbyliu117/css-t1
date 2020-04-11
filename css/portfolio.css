@@ -71,3 +71,18 @@ a.btn {
 #info .info-content p {
   margin: 3rem 0.5rem;
 }
+
+@media (max-width:500px) {
+  #info {
+    height: 750px;
+  }
+  #info .info-img {
+    float: none;
+    height: 50%;
+    width: 100%;
+  }
+  #info .info-content {
+    float: none;
+    width: 100%;
+  }
+}
