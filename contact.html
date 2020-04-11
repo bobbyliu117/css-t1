@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/footer.css">
   <title>Binary Kong CONTACT | 联系我们</title>
 </head>
@@ -24,7 +25,48 @@
     </nav>
   </header>
   <main>
-    Contact
+    <section id="contact-form">
+      <div class="header">
+        <h1>Contact Us</h1>
+        <p>Please fill out the form below to contact us</p>
+      </div>
+      <form action="test.php" method="get">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="text" name="email">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <button class="submit" type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section id="contact-info">
+      <div class="container">
+        <i class="fas fa-map-marker-alt fa-2x fa-fw"></i>
+        <p>388 E Valley Blvd #106</p>
+        <p>Alhambra, CA 91801</p>
+      </div>
+      <div class="container">
+        <i class="fas fa-envelope fa-2x fa-fw"></i>
+        <p>sarasha@kw.com</p>
+      </div>
+      <div class="container">
+        <i class="fas fa-phone fa-2x fa-fw"></i>
+        <p>(347)931-8900</p>
+      </div>
+      <div class="container">
+        <i class="fab fa-weixin fa-2x fa-fw"></i>
+        <p>syjzi2012</p>
+      </div>
+    </section>
+
   </main>
   <footer>
     <span>BINARY KONG</span> &copy; 2020. All Rights Reserved.

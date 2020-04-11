@@ -57,6 +57,29 @@ a {
 .container a { display: inline-block; }
 ```
 
+**input and label**
+
+`label for` -> `input id`
+
+`label name` -> form-data key for form `submit` action
+```js
+<label for="name">Name</label>
+<input id="name" type="text" name="name">
+```
+
+**textarea**
+
+Must close!
+
+use `width:100%` to expand the whole line. display block won't work, `input` same
+```js
+<textarea id="message" name="message"></textarea>
+```
+
+**outline attribute**
+
+focus时的border，`input`, `textarea`, `button` 等
+
 **html特殊字符**
 
 © `&copy;`
