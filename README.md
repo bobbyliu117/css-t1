@@ -104,3 +104,7 @@ focus时的border，`input`, `textarea`, `button` 等
 ```
 name, short_name, description, icons:[src,size,type], start_url, display, scope, related_applications
 ```
+Apple icon
+```
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+```
