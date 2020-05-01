@@ -1,0 +1,17 @@
+{
+  "name": "Binary Kong - Coding and Design Services",
+  "short_name": "BinaryKong",
+  "description": "We do coding and design services",
+  "start_url": ".",
+  "display": "standalone",
+  "scope": "/",
+  "icons":[
+    {
+      "src": "images/logo.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2A2A2A",
+  "background_color": "#FFF"
+}

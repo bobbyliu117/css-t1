@@ -89,3 +89,18 @@ focus时的border，`input`, `textarea`, `button` 等
 **media query**
 1. `<link rel="stylesheet" media="screen and (max-width: 768px)" href="mobile.css">`
 2. `@media(min-width:501px) and (max-width:500px) {}`
+
+# PWA
+
+## Manifest
+
+### Setup
+
+```html
+<link rel="manifest" href="manifest.json">
+```
+[Manifest Entries](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+
+```
+name, short_name, description, icons:[src,size,type], start_url, display, scope, related_applications
+```
