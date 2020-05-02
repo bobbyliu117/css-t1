@@ -108,3 +108,29 @@ Apple icon
 ```
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 ```
+
+## Service Worker
+
+### Setup
+Scope is where `sw.js` sits -> root to scope global
+```js
+navigator.serviceWorker.register('/sw.js').then(function(){})
+```
+Add listener
+```js
+// install, activate, fetch
+self.addEventListener('install', function (event){});
+```
+Fixer line for `activate`
+```js
+return self.clients.claim(); // a promise
+```
+
+### Fetch Event
+
+实现Network Proxy
+```js
+event.respondWith(
+  fetch(event.request)
+);
+```
