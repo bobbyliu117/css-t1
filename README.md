@@ -134,3 +134,27 @@ event.respondWith(
   fetch(event.request)
 );
 ```
+
+### App Install Banner
+Events `beforeinstallprompt`, `appinstalled`
+```
+window.addEventListener('beforeinstallprompt', function(event){
+  event.preventDefault();
+  var deferredPrompt = event;
+});
+```
+
+```js
+function promptInstall() {
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(function(choiseResult){
+    if (choiceResult.outcome === 'dismissed') {
+      console.log('Not installed')
+    } else {
+      console.log('Installing app...')
+    }
+    deferredPrompt = null;
+  });
+}
+```
+
