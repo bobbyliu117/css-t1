@@ -126,14 +126,36 @@ Fixer line for `activate`
 return self.clients.claim(); // a promise
 ```
 
-### Fetch Event
-
-实现Network Proxy
+### Fetch Event & Cache
+实现Network Proxy -> Cache
 ```js
-event.respondWith(
-  fetch(event.request)
-);
+self.addEventListener('install', event => event.waitUntil(cacheStatic()));
+self.addEventListener('fetch', event => event.respondWith(cacheDynamic(event.request)));
+
+function cacheStatic() {
+  return caches.open('static').then(cache => cache.addAll([]));
+}
+
+async function cacheDynamic(req) {
+  const cache = await caches.open('dynamic');
+  const cacheRes = await cache.match(req);
+  if (cacheRes) return cacheRes;
+  const fetchRes = await fetch(req);
+  event.waitUntil(
+    cache.put(req, fetchRes.clone())
+  );
+  return fetchRes;
+}
 ```
+
+### Clear Cache
+```js
+// wrap in event.waitUntil, which takes a Promise as param
+caches.keys().then(keys => Promise.all(keys.map(key => {
+  return caches.delete(key);
+})));
+```
+
 
 ### [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 ```js
