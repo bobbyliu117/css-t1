@@ -135,14 +135,24 @@ event.respondWith(
 );
 ```
 
+### [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+```js
+fetch(url, {method,headers,body,mode,cache,credentials,redirect,referrerPolicy})
+```
+
 ### App Install Banner
-Events `beforeinstallprompt`, `appinstalled`
+`beforeinstallprompt`
 ```
 window.addEventListener('beforeinstallprompt', function(event){
   event.preventDefault();
   var deferredPrompt = event;
 });
 ```
+`appinstalled`
+```js
+window.addEventListener('appinstalled', (event) => {}));
+```
+
 
 ```js
 function promptInstall() {
