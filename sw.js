@@ -1,25 +1,30 @@
-// version: 1
+// version: 3
+const staticCacheList = [
+  '/',
+  '/index.html',
+  '/css/reset.css',
+  '/css/utils.css',
+  '/css/header.css',
+  '/css/portfolio.css',
+  '/css/features.css',
+  '/css/footer.css',
+  '/js/main.js'
+];
 
 self.addEventListener('install', event => event.waitUntil(cacheStatic()));
 
-self.addEventListener('activate', event => self.clients.claim());
+self.addEventListener('activate', event => {
+  console.log('activating service worker...');
+  return self.clients.claim()
+});
 
 self.addEventListener('fetch', event => event.respondWith(cacheDynamic(event.request)));
 
-function cacheStatic() {
-  return caches.open('static').then(cache => {
-    cache.addAll([
-      '/',
-      '/index.html',
-      '/css/reset.css',
-      '/css/utils.css',
-      '/css/header.css',
-      '/css/portfolio.css',
-      '/css/features.css',
-      '/css/footer.css',
-      '/js/main.js'
-    ])
-  })
+async function cacheStatic() {
+  console.log('installing service worker..');
+  await clearCache();
+  const cache = await caches.open('static');
+  await cache.addAll(staticCacheList);
 }
 
 async function cacheDynamic(req) {
@@ -27,8 +32,13 @@ async function cacheDynamic(req) {
   const cacheRes = await cache.match(req);
   if (cacheRes) return cacheRes;
   const fetchRes = await fetch(req);
-  event.waitUntil(
-    cache.put(req, fetchRes.clone())
-  );
+  await cache.put(req, fetchRes.clone())
   return fetchRes;
+}
+
+async function clearCache() {
+  const keys = await caches.keys();
+  for (const key of keys) {
+    await caches.delete(key);
+  }
 }
