@@ -2,6 +2,7 @@
 const staticCacheList = [
   '/',
   '/index.html',
+  '/offline.html',
   '/css/reset.css',
   '/css/utils.css',
   '/css/header.css',
@@ -31,9 +32,14 @@ async function cacheDynamic(req) {
   const cache = await caches.open('dynamic');
   const cacheRes = await cache.match(req);
   if (cacheRes) return cacheRes;
-  const fetchRes = await fetch(req);
-  await cache.put(req, fetchRes.clone())
-  return fetchRes;
+  try {
+    const fetchRes = await fetch(req);
+    await cache.put(req, fetchRes.clone());
+    return fetchRes;
+  } catch (error) {
+    const staticCache = await caches.open('static');
+    return staticCache.match('/offline.html');
+  }
 }
 
 async function clearCache() {
